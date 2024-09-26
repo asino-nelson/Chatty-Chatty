@@ -1,9 +1,9 @@
 import { useContext, useEffect, useState } from "react";
 import AuthContext from "../context/AuthContext";
-import Search_input from "../components/search/search_input";
 import useAxios from "../utils/useAxios";
 import { jwtDecode } from "jwt-decode";
 import { Link, Outlet } from "react-router-dom";
+import Search_input from "../components/search/Search_input";
 
 const Chat_page = () => {
   const baseURL = "http://127.0.0.1:8000/api";
@@ -65,7 +65,8 @@ const Chat_page = () => {
               )}
           </div>
 
-          <Search_input />
+          {/* <Search_input /> */}
+          < Search_input/>
           {messages.length === 0 ? (
             <p>No messages found</p>
           ) : (
