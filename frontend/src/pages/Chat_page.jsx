@@ -6,7 +6,7 @@ import { Link, Outlet } from "react-router-dom";
 import Search_input from "../components/search/Search_input";
 
 const Chat_page = () => {
-  const baseURL = "http://127.0.0.1:8000/api";
+  const baseURL = "https://chatty-backend-two.vercel.app/api";
 
   const { logoutUser } = useContext(AuthContext);
 
