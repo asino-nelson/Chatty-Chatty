@@ -12,7 +12,7 @@ function App() {
       <AuthProvider>
         <Routes>
           <Route
-            path="/"
+            path="/chat"
             element={
               <PrivateRoute>
                 <Chat_page />
