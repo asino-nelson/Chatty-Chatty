@@ -25,7 +25,7 @@ export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
 
   const loginUser = async (email, password) => {
-    const response = await fetch("http://127.0.0.1:8000/api/token/", {
+    const response = await fetch("https://chatty-backend-two.vercel.app/token/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -41,7 +41,7 @@ export const AuthProvider = ({ children }) => {
 
     if (response.status === 200) {
       console.log("Logged In ");
-      navigate("/chat");
+      navigate("/");
       setAuthToken(data);
       setUser(jwtDecode(data.access));
       localStorage.setItem("authToken", JSON.stringify(data));
@@ -54,7 +54,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const registerUser = async (email, username, password, password2) => {
-    const response = await fetch("http://127.0.0.1:8000/api/register/", {
+    const response = await fetch("https://chatty-backend-two.vercel.app/register/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
