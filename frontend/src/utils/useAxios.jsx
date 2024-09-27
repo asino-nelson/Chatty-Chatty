@@ -5,7 +5,7 @@ import dayjs from 'dayjs'
 import { jwtDecode } from 'jwt-decode'
 
 
-const baseURL = "http://127.0.0.1:8000/api"
+const baseURL = "https://chatty-backend-two.vercel.app/api"
 
 
 const useAxios = () => {

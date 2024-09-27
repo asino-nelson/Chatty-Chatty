@@ -41,7 +41,7 @@ export const AuthProvider = ({ children }) => {
 
     if (response.status === 200) {
       console.log("Logged In ");
-      navigate("/chat");
+      navigate("/");
       setAuthToken(data);
       setUser(jwtDecode(data.access));
       localStorage.setItem("authToken", JSON.stringify(data));
