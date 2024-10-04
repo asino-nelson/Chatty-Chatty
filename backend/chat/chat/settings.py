@@ -15,7 +15,7 @@ SECRET_KEY = 'django-insecure-%0%3)t3bnw!my-e)9vlg^nn@2uuvp27cwoz4-w!wdjl=n@q7*e
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["*", ".vercel.app"]
+ALLOWED_HOSTS = [".vercel.app"]
 
 
 # Application definition
@@ -35,6 +35,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -159,6 +160,9 @@ SIMPLE_JWT = {
     'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
 }
 
+CORS_ALLOWED_ORIGINS = [
+    'https://chatty-front.vercel.app',
+]
 
 CORS_ALLOW_ALL_ORIGINS = True
 
