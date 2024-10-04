@@ -25,16 +25,19 @@ export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
 
   const loginUser = async (email, password) => {
-    const response = await fetch("https://chatty-backend-two.vercel.app/token/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email,
-        password,
-      }),
-    });
+    const response = await fetch(
+      "https://chatty-backend-two.vercel.app/token/",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          password,
+        }),
+      }
+    );
 
     const data = await response.json();
     console.log("Response data", data);
@@ -45,7 +48,6 @@ export const AuthProvider = ({ children }) => {
       setAuthToken(data);
       setUser(jwtDecode(data.access));
       localStorage.setItem("authToken", JSON.stringify(data));
-      
     } else {
       console.log(response.status);
       console.log("Something went wrong");
@@ -54,18 +56,23 @@ export const AuthProvider = ({ children }) => {
   };
 
   const registerUser = async (email, username, password, password2) => {
-    const response = await fetch("https://chatty-backend-two.vercel.app/register/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email,
-        username,
-        password,
-        password2,
-      }),
-    });
+    const response = await fetch(
+      "https://chatty-backend-two.vercel.app/register/",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "POST,PATCH,OPTIONS",
+        },
+        body: JSON.stringify({
+          email,
+          username,
+          password,
+          password2,
+        }),
+      }
+    );
 
     const data2 = await response.json();
 
