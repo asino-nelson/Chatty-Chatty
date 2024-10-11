@@ -15,6 +15,4 @@ urlpatterns = [
     path("profile/<int:pk>/", views.ProfileDetails.as_view()),
     path("search/<username>/", views.SearchUser.as_view()),
 
-
-
 ]
