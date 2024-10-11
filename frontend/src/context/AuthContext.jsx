@@ -26,7 +26,7 @@ export const AuthProvider = ({ children }) => {
 
   const loginUser = async (email, password) => {
     const response = await fetch(
-      "https://chatty-backend-two.vercel.app/token/",
+      "https://chatty-backend-two.vercel.app/api/token/",
       {
         method: "POST",
         headers: {
@@ -60,7 +60,7 @@ export const AuthProvider = ({ children }) => {
 
   const registerUser = async (email, username, password, password2) => {
     const response = await fetch(
-      "https://chatty-backend-two.vercel.app/register/",
+      "https://chatty-backend-two.vercel.app/api/register/",
       {
         method: "POST",
         headers: {
