@@ -38,6 +38,7 @@ export const AuthProvider = ({ children }) => {
           email,
           password,
         }),
+        mode: "cors",
       }
     );
 
@@ -73,6 +74,7 @@ export const AuthProvider = ({ children }) => {
           password,
           password2,
         }),
+        mode: "cors",
       }
     );
 
